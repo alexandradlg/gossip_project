@@ -1,0 +1,8 @@
+<h1>Voici le gossip numéro <%= @gossip.id%></h1></br>
+
+<div>
+  <td><%=@gossip.content %></td></br></br>
+  <td><%= link_to "Editer", edit_gossip_path %></td></br></br>
+  <td><%= link_to 'Supprimer', @gossip, method: :delete %></td></br></br>
+  <td><%= link_to "Revenir à l'index", gossips_path %></td>
+</div>
