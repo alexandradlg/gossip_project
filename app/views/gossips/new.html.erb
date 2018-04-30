@@ -1,0 +1,10 @@
+<form class ="form-control" action="<%= gossips_path %>" method="post">
+
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    Ton pseudo:</br>
+    <input type="text" name="anonymous_author"></br>
+    Vas-y balance:</br>
+    <textarea cols="40" rows="5"name="content"></textarea></br>
+    <input class="summit" type="submit" value="Create">
+
+</form>
