@@ -62,7 +62,7 @@ Firefox, Safari, Chrome, Internet Explorer 8, ...
 
 * Visual Studio Code
 * GitHub
-* De l'amour et des chouquettes
+* Heroku
 
 
 ## Contributors
