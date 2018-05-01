@@ -4,5 +4,32 @@
   <td><%=@gossip.content %></td></br></br>
   <td><%= link_to "Editer", edit_gossip_path %></td></br></br>
   <td><%= link_to 'Supprimer', @gossip, method: :delete %></td></br></br>
+
   <td><%= link_to "Revenir à l'index", gossips_path %></td>
+</div></br>
+<div>
+<table class="table">
+<tr>
+  <p>Voici les commentaires de ce gossip :</p></br>
+  <th> Pseudo de l'auteur du commentaire</th>
+  <th>Commentaire</th>
+  <th>Editer</th>  
+  <% @gossip.comments.each do |comment|%>
+  <tr>
+    <td><%=comment.anonymous_commentor%></td>
+    <td><%=comment.body%></td>
+    <td><%= link_to "Editer", edit_gossip_comment_path(@gossip.id,comment.id) %></td>
+  </tr>
+  <%end%>
+</table>
 </div>
+
+
+
+
+<h2>Un petit commentaire sur ce gossip ?</h2></br>
+<%= form_tag gossip_comments_path(@gossip), method: :post do %>
+
+<%= render '/comments/form'%>
+
+<% end %>

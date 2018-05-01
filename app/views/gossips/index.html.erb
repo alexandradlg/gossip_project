@@ -1,4 +1,4 @@
-<table class="table-hover">
+<table class="table">
   <tr>
     <h1>Voilà la liste des gossip, Enjoy!<h1>
     <div style="text-align:center;">  <%= link_to "J'ajoute mon gossip", gossips_new_path, class: "btn btn-lg btn-primary" %>
@@ -6,13 +6,13 @@
     
     <th>Gossip</th>
     <th>En savoir plus sur ce gossip</th>
+    <th>Nombre de commentaires</th>
   </tr>
-
+  
   <% @gossips.each do |gossip| %>
     <tr>
-        <td style="padding-right:100px;"><%= gossip.content %></td>
-        <td><%= link_to 'En savoir plus', gossip_path(gossip.id) %></td>
+      <td><%= gossip.content %></td>
+      <td><%= link_to 'En savoir plus', gossip_path(gossip.id) %></td>
+      <td><%= gossip.comments.count%></td>
     </tr>
   <% end %>
-
-</table>
